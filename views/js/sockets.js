@@ -15,9 +15,12 @@ var starta = document.getElementById("start")
 var diagram = document.getElementById("diagram")
 
 var socket = io.connect()
+var data =[]
 
 socket.on('socket', (msg, ms)=>{
+    
     console.log(msg)
+    data.push(msg)
     p.innerHTML=(msg * 1).toFixed(2)
     stripeTemperature.style.width =  100/( temperatureK.value / msg ) + "%"
     if (Number.parseFloat(ms) >=0) {
@@ -27,6 +30,11 @@ socket.on('socket', (msg, ms)=>{
         onoff.style.color = "Red"
         onoff.innerHTML = 'Выкл.'
         //diagram.style.display = 'flex'
+        
+        data.shift(0)
+        var a = [0,2,5,7,6,1,4,9,15]
+        
+        //data =[]
     }else{
         onoff.style.color = "Green"
         onoff.innerHTML = 'Вкл.'
