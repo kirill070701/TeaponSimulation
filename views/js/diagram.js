@@ -1,9 +1,6 @@
 
-function grafic() {
-    //console.log(params)
-    document.addEventListener("DOMContentLoaded", function(){
+function grafic(params) {
         // Create liteChart.js Object
-        
         let d = new liteChart("chart", {
         animate: {
             show: false,
@@ -55,7 +52,7 @@ function grafic() {
             linecap:"round",
         },
         labels: {
-            show: true,
+            show: false,
             fontColor: "#c5c6d0",
             fontSize: 12,
             fontFamily: "sans-serif",
@@ -99,12 +96,16 @@ function grafic() {
             show: false,
         },
     } );
-    
+    var lngth = []
+     for (let index = 0; index < params.length; index++) {
+         lngth.push(index)
+         
+     }
         
-    d.setLabels(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]);
+    d.setLabels(lngth);
 
 	// Set legends and values
-	d.addLegend({"name": "Day", "stroke": "#CDDC39", "fill": "#fff", "values": [100, 200, 450, 400, 500, 300, 700, 800, 601, 705, 604, 803]});
+	d.addLegend({"name": "Day", "stroke": "#CDDC39", "fill": "#fff", "values": params});
 	
 
 	// Inject chart into DOM object
@@ -113,9 +114,5 @@ function grafic() {
 
 	// Draw
 	d.draw();
-    });
-
-
 }
-//grafic()
     

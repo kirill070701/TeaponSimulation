@@ -6,6 +6,6 @@ module.exports ={connection: (io)=>{
     io.on('connection', (socket)=>{
         position.data(socket, true)
         data(socket)
-        console.log("OK ")
+        console.log("Пользователь подключен")
     })
 }}
