@@ -8,9 +8,11 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/inference.css">
     <link rel="stylesheet" type="text/css" href="/css/shrifts.css">
+    <link rel="stylesheet" type="text/css" href="/css/diagram.css">
     <title>Document</title>
 </head>
 <body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <div class="info">
         <div class="inputsField">
             <div class="v">
@@ -42,12 +44,14 @@
         </div>
         <%- include('inference')%>
     </div>
+    <%- include('diagram')%>
     <script src="/socket.io/socket.io.js"></script>
     
     <script src="../js/data.js"></script>
     <script src="../js/sockets.js"></script>
     <script src="../js/position.js"></script>
     <script src="../js/buttonStop.js"></script>
+    <script src="../js/diagram.js"></script>
     
 </body>
 </html>

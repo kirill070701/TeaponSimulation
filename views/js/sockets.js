@@ -12,6 +12,7 @@ var writeTime = document.getElementById("writeTime")
 var stripeTemperature = document.getElementById("stripeTemperature")
 var stopa = document.getElementById("stopa")
 var starta = document.getElementById("start")
+var diagram = document.getElementById("diagram")
 
 var socket = io.connect()
 
@@ -25,6 +26,7 @@ socket.on('socket', (msg, ms)=>{
     if (Number.parseInt(msg) >= Number.parseInt(temperatureK.value)) {
         onoff.style.color = "Red"
         onoff.innerHTML = 'Выкл.'
+        //diagram.style.display = 'flex'
     }else{
         onoff.style.color = "Green"
         onoff.innerHTML = 'Вкл.'
