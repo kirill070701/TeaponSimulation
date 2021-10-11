@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/inference.css">
+    <link rel="stylesheet" type="text/css" href="/css/shrifts.css">
+    <link rel="stylesheet" type="text/css" href="/css/diagram.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../lib/liteChart.min.js"></script>
+    <div class="info">
+        <div class="inputsField">
+            <div class="v">
+                <p class="name">Объем котла:</p>
+                <input type="text" id="volume" class="volume">
+                <p>л.</p>
+            </div>
+            <div class="vv">
+                <p class="name">Процент заполняемости:</p>
+                <input type="text" id="percent" class="percent">
+                <p>%</p>
+            </div>
+            <div class="Tn">
+                <p class="name">Начальная температура:</p>
+                <input type="text" id="temperatureN" class="temperatureN">
+                <p>°С</p>
+            </div>
+            <div class="Tk">
+                <p class="name">Конечная температура:</p>
+                <input type="text" id="temperatureK" class="temperatureK">
+                <p>°С</p>
+            </div>
+            <div class="heater">
+                <p class="name">Мощность нагревателя:</p>
+                <input type="text" id="powerHeater" class="powerHeater">
+                <p>кВт</p>
+            </div>
+            <input type="button" value="Продолжить" id="continue" class="continue">
+        </div>
+        <%- include('boilerInference')%>
+    </div>
+    <!--<%- include('diagram')%>-->
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script src="../js/boiler/data.js"></script>
+    <!--<script src="../js/diagram.js"></script>-->
+    <script src="../js/boiler/socket.js"></script>
+    <!--<script src="../js/position.js"></script>
+    <script src="../js/buttonStop.js"></script>-->
+    
+    
+</body>
+</html>

@@ -7,7 +7,7 @@ var powerHeater = document.getElementById("powerHeater")
 function shipmentSocket(socket) {
     socket.emit('socket', [volume.value / 100 * percent.value, temperatureN.value, temperatureK.value, powerHeater.value])
 }
-function acceptanceSocket(socket) {
+/*function acceptanceSocket(socket) {
     socket.on('socket', (msg, ms)=>{
         console.log(msg)
         console.log(ms)
@@ -24,5 +24,5 @@ function acceptanceSocket(socket) {
             onoff.innerHTML = 'Вкл.'
         }
     })
-}
+}*/
 
