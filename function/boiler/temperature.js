@@ -9,7 +9,10 @@ module.exports ={
         //console.log((time / (0.00117 * v)) * p + Number.parseInt(tn))
         return ((time / (0.00117 * v)) * p + Number.parseInt(tn))
     },
-    volume:()=>{
-        
+    downgradeTemperature:(time, v, tn, p)=>{
+        return ((time / (0.00117 * v)) * (-0.150) + Number.parseInt(tn))
+    },
+    waterVolume:(v)=>{
+        return (((v * 1000) - 40) / 1000)
     }
 }
