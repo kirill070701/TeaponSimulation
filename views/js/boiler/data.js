@@ -30,14 +30,5 @@ function acceptanceSocket(socket) {
             shapePercent.innerHTML = (volumeV).toFixed(1) + "л.";
             console.log(volumeV + " ")
         }
-        
-        
-        /*if (Number.parseInt(msg) >= Number.parseInt(temperatureK.value)) {
-            onoff.style.color = "Red"
-            onoff.innerHTML = 'Выкл.'
-        }else{
-            onoff.style.color = "Green"
-            onoff.innerHTML = 'Вкл.'
-        }*/
     })
 }
