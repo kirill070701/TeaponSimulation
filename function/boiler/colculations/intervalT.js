@@ -42,5 +42,6 @@ module.exports = (time, writeTime, temperatureN, msg, socket, vprtn)=>{
     }, 1000)
     socket.on('disconnect', ()=>{
         clearInterval(intervalT)
+        console.log('отключен котел')
     })
 }

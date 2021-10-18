@@ -2,11 +2,10 @@ var intervalT                       = require('./intervalT')
 var temperature                     = require('../temperature')
 var evaporation                     = require('./evaporation')
 
-let time = 1
-var writeTime = 1
-var vprtn
-
 module.exports = (msg, socket)=>{
+    let time = 1
+    var writeTime = 1
+    var vprtn
     vprtn = msg[0]
     let interval = setInterval(()=>{
         time += 1
@@ -20,4 +19,8 @@ module.exports = (msg, socket)=>{
             intervalT(time, writeTime, temperatureN, msg, socket, vprtn)
         }
     }, 1000)
+    socket.on('disconnect', ()=>{
+        clearInterval(interval);
+        console.log('отключен котел')
+    })
 }
